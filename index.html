@@ -319,6 +319,12 @@
             cursor: pointer;
         }
 
+        /* Menú móvil oculto por defecto (en escritorio).
+           Solo se muestra en móvil cuando el JS le añade la clase .active */
+        .nav-mobile {
+            display: none;
+        }
+
         .menu-toggle span {
             width: 26px;
             height: 2px;
@@ -1419,6 +1425,7 @@
             }
 
             .nav-mobile {
+                display: block;
                 position: fixed;
                 top: 88px;
                 left: 0;
