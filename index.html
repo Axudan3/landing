@@ -2036,9 +2036,9 @@
                 <!-- Formulario -->
                 <div class="contacto-form reveal reveal-delay-2">
                     <div class="form-success" id="formSuccess">
-                        ✓ Tu mensaje se ha preparado correctamente. Se abrirá tu cliente de email para que lo envíes.
+                        ✓ ¡Gracias por tu mensaje! Te contactaremos lo antes posible.
                     </div>
-                    <form id="contactForm" novalidate>
+                    <form id="contactForm" action="https://formspree.io/f/mzdopdoz" method="POST" novalidate>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="nombre">Nombre <span class="required">*</span></label>
@@ -2248,15 +2248,16 @@
         });
 
         // ============================================
-        // 4. FORMULARIO DE CONTACTO
+        // 4. FORMULARIO DE CONTACTO (conectado con Formspree)
         // ============================================
-        // Por defecto, el formulario abre el cliente de email del usuario.
-        // Para conectarlo a un servicio real (Formspree, EmailJS, Netlify Forms),
-        // sustituye la lógica del bloque marcado más abajo.
+        // El formulario envía los mensajes a Formspree, que los reenvía
+        // automáticamente a axudan.3.0@gmail.com.
+        // Endpoint actual: https://formspree.io/f/mzdopdoz
         const contactForm = document.getElementById('contactForm');
         const formSuccess = document.getElementById('formSuccess');
+        const formSubmitBtn = contactForm.querySelector('.form-submit');
 
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             // Validación básica
@@ -2265,28 +2266,43 @@
                 return;
             }
 
-            // Recoger datos
-            const nombre = document.getElementById('nombre').value;
-            const email = document.getElementById('email').value;
-            const telefono = document.getElementById('telefono').value;
-            const asunto = document.getElementById('asunto').value;
-            const mensaje = document.getElementById('mensaje').value;
+            // Cambiar el botón a "Enviando..." mientras se procesa
+            const textoBotonOriginal = formSubmitBtn.textContent;
+            formSubmitBtn.textContent = 'Enviando...';
+            formSubmitBtn.disabled = true;
 
-            // ▼▼▼ INTEGRACIÓN — sustituye este bloque por Formspree/EmailJS si lo deseas ▼▼▼
-            // Construir cuerpo del email
-            const subject = `[Web AXUDAN3] ${asunto} — ${nombre}`;
-            const body = `Nombre: ${nombre}%0D%0AEmail: ${email}%0D%0ATeléfono: ${telefono || 'No proporcionado'}%0D%0AServicio de interés: ${asunto}%0D%0A%0D%0AMensaje:%0D%0A${mensaje}`;
+            try {
+                // Enviar los datos a Formspree
+                const formData = new FormData(contactForm);
+                const response = await fetch('https://formspree.io/f/mzdopdoz', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
-            // Abrir cliente de email
-            window.location.href = `mailto:axudan.3.0@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-            // Mostrar mensaje de éxito y resetear formulario
-            formSuccess.classList.add('visible');
-            setTimeout(() => {
-                contactForm.reset();
-                setTimeout(() => formSuccess.classList.remove('visible'), 4000);
-            }, 500);
-            // ▲▲▲ FIN DEL BLOQUE A SUSTITUIR ▲▲▲
+                if (response.ok) {
+                    // ✅ Mensaje enviado correctamente
+                    formSuccess.textContent = '✓ ¡Gracias por tu mensaje! Te contactaremos lo antes posible.';
+                    formSuccess.classList.add('visible');
+                    contactForm.reset();
+                    // Ocultar el mensaje después de 8 segundos
+                    setTimeout(() => formSuccess.classList.remove('visible'), 8000);
+                } else {
+                    // ❌ Error de Formspree
+                    formSuccess.textContent = '✗ Hubo un problema al enviar el mensaje. Por favor, escríbenos directamente a axudan.3.0@gmail.com';
+                    formSuccess.classList.add('visible');
+                }
+            } catch (error) {
+                // ❌ Error de conexión
+                formSuccess.textContent = '✗ Error de conexión. Por favor, revisa tu internet o escríbenos a axudan.3.0@gmail.com';
+                formSuccess.classList.add('visible');
+            } finally {
+                // Restaurar el botón
+                formSubmitBtn.textContent = textoBotonOriginal;
+                formSubmitBtn.disabled = false;
+            }
         });
 
         // ============================================
