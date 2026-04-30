@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad — AXUDAN3</title>
+    <meta name="description" content="Política de privacidad de AXUDAN3. Cómo tratamos tus datos personales conforme al RGPD y la LOPDGDD.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/jpeg" href="logo-axudan3.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --morado-principal: #8B7AB8;
+            --morado-oscuro: #6B5A98;
+            --lavanda: #B8A8D4;
+            --lila-pastel: #D4C5E8;
+            --lila-suave: #EDE5F5;
+            --rosa-coral: #E89B9B;
+            --crema: #FAF8FC;
+            --texto-oscuro: #3D3654;
+            --texto-medio: #6B6480;
+            --fuente-display: 'Fraunces', Georgia, serif;
+            --fuente-cuerpo: 'DM Sans', -apple-system, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--fuente-cuerpo);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--texto-oscuro);
+            background-color: var(--crema);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .legal-header {
+            background-color: white;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(139, 122, 184, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .legal-header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .legal-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .legal-logo img { height: 50px; width: auto; }
+
+        .legal-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: var(--morado-principal);
+            color: white;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .legal-back:hover {
+            background-color: var(--morado-oscuro);
+            transform: translateY(-2px);
+        }
+
+        .legal-main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        .legal-eyebrow {
+            display: inline-block;
+            padding: 6px 16px;
+            background-color: var(--lila-suave);
+            color: var(--morado-principal);
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: var(--fuente-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--texto-oscuro);
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        .legal-fecha {
+            color: var(--texto-medio);
+            font-size: 0.9rem;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(139, 122, 184, 0.15);
+        }
+
+        h2 {
+            font-family: var(--fuente-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: var(--morado-oscuro);
+        }
+
+        h3 {
+            font-family: var(--fuente-cuerpo);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 14px;
+            color: var(--texto-oscuro);
+        }
+
+        p { margin-bottom: 18px; color: var(--texto-medio); }
+
+        ul, ol {
+            margin: 18px 0 18px 24px;
+            color: var(--texto-medio);
+        }
+
+        li { margin-bottom: 10px; }
+
+        a {
+            color: var(--morado-principal);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        a:hover { color: var(--rosa-coral); }
+
+        .legal-datos {
+            background-color: white;
+            border: 2px solid var(--lila-suave);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin: 24px 0 36px;
+        }
+
+        .legal-datos p {
+            margin-bottom: 8px;
+            color: var(--texto-oscuro);
+        }
+
+        .legal-datos strong {
+            color: var(--morado-principal);
+            display: inline-block;
+            min-width: 180px;
+        }
+
+        .legal-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(139, 122, 184, 0.08);
+        }
+
+        .legal-tabla th,
+        .legal-tabla td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--lila-suave);
+            font-size: 0.95rem;
+        }
+
+        .legal-tabla th {
+            background-color: var(--lila-suave);
+            color: var(--morado-oscuro);
+            font-weight: 600;
+        }
+
+        .legal-tabla td { color: var(--texto-medio); }
+
+        .legal-derechos {
+            background-color: rgba(232, 155, 155, 0.1);
+            border-left: 4px solid var(--rosa-coral);
+            padding: 24px 28px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+
+        .legal-derechos h3 {
+            color: var(--rosa-coral);
+            margin-top: 0;
+        }
+
+        .legal-footer {
+            background-color: #2A2440;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .legal-footer a {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0 12px;
+        }
+
+        .legal-footer a:hover { color: var(--rosa-coral); }
+
+        @media (max-width: 600px) {
+            .legal-header-inner { justify-content: center; }
+            .legal-datos strong { display: block; margin-bottom: 4px; }
+            .legal-tabla { font-size: 0.85rem; }
+            .legal-tabla th, .legal-tabla td { padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="legal-header">
+        <div class="legal-header-inner">
+            <a href="index.html" class="legal-logo">
+                <img src="logo-axudan3.jpg" alt="Logo de AXUDAN3">
+            </a>
+            <a href="index.html" class="legal-back">← Volver al inicio</a>
+        </div>
+    </header>
+
+    <main class="legal-main">
+        <span class="legal-eyebrow">Información legal</span>
+        <h1>Política de Privacidad</h1>
+        <p class="legal-fecha">Última actualización: 30 de abril de 2026</p>
+
+        <p>En AXUDAN3 nos tomamos muy en serio la protección de tus datos personales. Esta Política de Privacidad explica cómo recogemos, tratamos y protegemos tu información cuando utilizas nuestro sitio web o te pones en contacto con nosotras.</p>
+        <p>Cumplimos con el <strong>Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016 (RGPD)</strong> y con la <strong>Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y Garantía de los Derechos Digitales (LOPDGDD)</strong>.</p>
+
+        <h2>1. Responsable del tratamiento</h2>
+        <div class="legal-datos">
+            <p><strong>Responsable:</strong> Fátima Abal Roma</p>
+            <p><strong>Nombre comercial:</strong> AXUDAN3</p>
+            <p><strong>NIF:</strong> 35473508X</p>
+            <p><strong>Domicilio:</strong> Rúa Sevilla, 11 - 1.º, 36630 Cambados (Pontevedra), España</p>
+            <p><strong>Teléfono:</strong> 674 339 621</p>
+            <p><strong>Correo electrónico:</strong> axudan.3.0@gmail.com</p>
+        </div>
+
+        <h2>2. ¿Qué datos personales recogemos?</h2>
+        <p>A través de este sitio web podemos recoger las siguientes categorías de datos:</p>
+
+        <h3>2.1. Datos que nos facilitas a través del formulario de contacto</h3>
+        <ul>
+            <li><strong>Datos identificativos:</strong> nombre.</li>
+            <li><strong>Datos de contacto:</strong> dirección de correo electrónico y, opcionalmente, teléfono.</li>
+            <li><strong>Información sobre tu consulta:</strong> servicio de interés y mensaje que nos envías.</li>
+        </ul>
+
+        <h3>2.2. Datos recogidos automáticamente</h3>
+        <p>Cuando navegas por nuestra web, podemos recoger información técnica (dirección IP, tipo de navegador, sistema operativo, fecha y hora de acceso) para garantizar el correcto funcionamiento del sitio. Para más información, consulta nuestra <a href="politica-cookies.html">Política de Cookies</a>.</p>
+
+        <h2>3. ¿Con qué finalidad y base jurídica tratamos tus datos?</h2>
+
+        <table class="legal-tabla">
+            <thead>
+                <tr>
+                    <th>Finalidad</th>
+                    <th>Base jurídica</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Responder a tu consulta o solicitud de información a través del formulario de contacto.</td>
+                    <td>Consentimiento del interesado/a (art. 6.1.a RGPD).</td>
+                </tr>
+                <tr>
+                    <td>Gestionar la relación profesional si finalmente contratas algún servicio.</td>
+                    <td>Ejecución de un contrato o aplicación de medidas precontractuales (art. 6.1.b RGPD).</td>
+                </tr>
+                <tr>
+                    <td>Cumplir con obligaciones legales (fiscales, contables) si procede.</td>
+                    <td>Cumplimiento de obligación legal (art. 6.1.c RGPD).</td>
+                </tr>
+                <tr>
+                    <td>Garantizar el correcto funcionamiento, la seguridad y el mantenimiento del sitio web.</td>
+                    <td>Interés legítimo del responsable (art. 6.1.f RGPD).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>4. ¿Durante cuánto tiempo conservamos tus datos?</h2>
+        <ul>
+            <li><strong>Datos del formulario de contacto:</strong> se conservan durante el tiempo necesario para gestionar tu consulta y, posteriormente, durante un máximo de 12 meses, salvo que solicites su supresión antes.</li>
+            <li><strong>Datos derivados de una relación profesional:</strong> durante la vigencia de la relación y, posteriormente, durante los plazos legalmente establecidos (hasta 6 años para obligaciones fiscales y contables).</li>
+            <li><strong>Datos técnicos:</strong> se conservan según los plazos descritos en la Política de Cookies.</li>
+        </ul>
+
+        <h2>5. ¿A quién comunicamos tus datos?</h2>
+        <p>Como norma general, <strong>no cedemos tus datos a terceros</strong>, salvo en los siguientes casos:</p>
+        <ul>
+            <li><strong>Por obligación legal:</strong> a las autoridades competentes (Hacienda, juzgados, fuerzas de seguridad) cuando una norma así lo exija.</li>
+            <li><strong>Proveedores de servicios:</strong> contamos con encargados del tratamiento que nos prestan servicios necesarios (alojamiento web, gestión del formulario de contacto), con los que tenemos firmados los contratos exigidos por el RGPD. Estos proveedores son:
+                <ul>
+                    <li><strong>GitHub, Inc.</strong> (alojamiento del sitio web mediante GitHub Pages). Política de privacidad: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement</a></li>
+                    <li><strong>Formspree, Inc.</strong> (gestión del formulario de contacto). Política de privacidad: <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener">https://formspree.io/legal/privacy-policy/</a></li>
+                    <li><strong>Google LLC</strong> (uso de Google Fonts para tipografías). Política de privacidad: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>6. Transferencias internacionales de datos</h2>
+        <p>Algunos de los proveedores indicados (GitHub, Formspree, Google) tienen su sede en Estados Unidos. Estas transferencias se realizan al amparo del <strong>Marco de Privacidad de Datos UE-EE. UU. (Data Privacy Framework)</strong>, que ofrece garantías adecuadas de protección, o mediante las <strong>Cláusulas Contractuales Tipo</strong> aprobadas por la Comisión Europea.</p>
+
+        <h2>7. Tus derechos en materia de protección de datos</h2>
+        <div class="legal-derechos">
+            <h3>Como titular de los datos, tienes derecho a:</h3>
+            <ul>
+                <li><strong>Acceso:</strong> conocer qué datos tuyos tratamos.</li>
+                <li><strong>Rectificación:</strong> corregir datos inexactos o incompletos.</li>
+                <li><strong>Supresión ("derecho al olvido"):</strong> solicitar la eliminación de tus datos cuando ya no sean necesarios.</li>
+                <li><strong>Oposición:</strong> oponerte al tratamiento de tus datos en determinadas circunstancias.</li>
+                <li><strong>Limitación del tratamiento:</strong> solicitar que se restrinja el tratamiento de tus datos en determinados supuestos.</li>
+                <li><strong>Portabilidad:</strong> recibir tus datos en un formato estructurado y de uso común.</li>
+                <li><strong>Retirar el consentimiento:</strong> en cualquier momento, sin que afecte a la licitud del tratamiento previo.</li>
+            </ul>
+        </div>
+
+        <h3>¿Cómo ejercer tus derechos?</h3>
+        <p>Puedes ejercer estos derechos enviando una solicitud por escrito a:</p>
+        <ul>
+            <li><strong>Correo electrónico:</strong> <a href="mailto:axudan.3.0@gmail.com">axudan.3.0@gmail.com</a></li>
+            <li><strong>Correo postal:</strong> Fátima Abal Roma, Rúa Sevilla, 11 - 1.º, 36630 Cambados (Pontevedra)</li>
+        </ul>
+        <p>En tu solicitud, indica claramente qué derecho deseas ejercer y adjunta una copia de tu DNI o documento equivalente que acredite tu identidad. Responderemos a tu solicitud en el plazo máximo de un mes.</p>
+
+        <h3>Reclamación ante la autoridad de control</h3>
+        <p>Si consideras que el tratamiento de tus datos no se ajusta a la normativa, tienes derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong>:</p>
+        <ul>
+            <li>Web: <a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a></li>
+            <li>Dirección: C/ Jorge Juan, 6, 28001 Madrid</li>
+            <li>Teléfono: 901 100 099 / 91 266 35 17</li>
+        </ul>
+
+        <h2>8. Seguridad de tus datos</h2>
+        <p>Hemos adoptado las medidas técnicas y organizativas necesarias para garantizar la seguridad de tus datos personales y evitar su alteración, pérdida, tratamiento o acceso no autorizado, teniendo en cuenta el estado de la tecnología, la naturaleza de los datos almacenados y los riesgos a los que están expuestos.</p>
+
+        <h2>9. Menores de edad</h2>
+        <p>El sitio web no está dirigido a personas menores de 14 años. Si eres menor de esa edad, no debes facilitarnos tus datos personales sin el consentimiento previo de tus padres, madres o tutores legales.</p>
+
+        <h2>10. Modificaciones de esta Política</h2>
+        <p>AXUDAN3 se reserva el derecho a modificar la presente Política de Privacidad para adaptarla a novedades legislativas o jurisprudenciales. Cualquier modificación se publicará en esta misma página, indicando la fecha de la última actualización.</p>
+
+        <h2>11. Contacto</h2>
+        <p>Si tienes cualquier duda sobre esta Política de Privacidad o sobre el tratamiento de tus datos, puedes contactar con nosotras a través del correo electrónico <a href="mailto:axudan.3.0@gmail.com">axudan.3.0@gmail.com</a>.</p>
+
+    </main>
+
+    <footer class="legal-footer">
+        <p>© 2026 AXUDAN3 — Fátima Abal Roma. Todos los derechos reservados.</p>
+        <p style="margin-top: 12px;">
+            <a href="index.html">Inicio</a> ·
+            <a href="aviso-legal.html">Aviso legal</a> ·
+            <a href="politica-privacidad.html">Política de privacidad</a> ·
+            <a href="politica-cookies.html">Política de cookies</a>
+        </p>
+    </footer>
+
+</body>
+</html>
