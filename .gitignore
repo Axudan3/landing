@@ -1,0 +1,42 @@
+# ============================================
+# .gitignore para AXUDAN3
+# Archivos que NO deben subirse a GitHub
+# ============================================
+
+# Archivos de sistema de Windows
+desktop.ini
+Thumbs.db
+ehthumbs.db
+$RECYCLE.BIN/
+
+# Archivos de sistema de macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Archivos de sistema de Linux
+*~
+.directory
+.Trash-*
+
+# Editores de texto
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Archivos sensibles (por si alguna vez añades algo)
+.env
+.env.local
+*.key
+*.pem
+
+# Logs
+*.log
+logs/
+
+# Dependencias (por si en el futuro añades alguna)
+node_modules/
